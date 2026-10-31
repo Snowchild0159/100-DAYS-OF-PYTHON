@@ -1,5 +1,7 @@
 
 import random
+from art import logo
+
 
 numbers = list(range(1, 101))
 lives = (input("do you want to play easy or hard mode? type 'easy' or 'hard': "))
@@ -11,9 +13,11 @@ elif lives == "hard":
 correct_number = random.choice(numbers)
 
 def guess_number(lives):
+    print(logo)
     game_over = False
     while not game_over:
         guess = int(input("Make a guess: "))
+        print(f"You have {lives} attempts remaining to guess the number.")
         if guess == correct_number:
             print(f"you got it! the answer was {correct_number}")
             game_over = True
